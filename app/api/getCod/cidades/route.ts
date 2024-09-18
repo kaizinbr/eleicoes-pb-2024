@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextResponse } from "next/server";
-import csvToJson, { readCidadesComCod, readCandidatos, readCandidatoRow } from "@/handlers/readCsv";
+import csvToJson, { readCidadesComCod, readCandidatos, readCandidatoRow } from "@/utils/readCsv";
 
 // type Params = {
 //     team: string;
 // };
 
 export async function GET(request: Request) {
-    const csvData = csvToJson("data/consulta_cand_2024_PB.csv");
+    const csvData = csvToJson();
     // sobrado 19020
     // joilson 13222
 

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextResponse, type NextRequest } from 'next/server'
 
-import csvToJson, { readCidadesComCod, readCandidatos, readCandidatoRow } from "@/handlers/readCsv";
+import csvToJson, { readCidadesComCod, readCandidatos, readCandidatoRow } from "@/utils/readCsv";
 
 export async function GET(request: NextRequest) {
     try {
@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
             });
         }
 
-        const csvData = csvToJson("data/consulta_cand_2024_PB.csv");
+        const csvData = csvToJson();
 
         const result = readCandidatos(cidade, cargo);
 
