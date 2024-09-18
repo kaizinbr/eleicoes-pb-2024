@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextResponse, type NextRequest } from 'next/server'
 
-import csvToJson, { readCidadesComCod, readCandidatos, readCandidatoRow } from "@/utils/readCsv";
+import { readCidadesComCod, readCandidatos, readCandidatoRow } from "@/utils/readCsv";
 
 export async function GET(request: NextRequest) {
     try {
@@ -16,8 +16,6 @@ export async function GET(request: NextRequest) {
                 message: "Parâmetros inválidos",
             });
         }
-
-        const csvData = csvToJson();
 
         const result = readCandidatos(cidade, cargo);
 

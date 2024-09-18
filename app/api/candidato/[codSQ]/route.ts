@@ -42,7 +42,7 @@ export async function GET(
             status: 500,
             success: false,
             message: "Ocorreu um erro ao processar a solicitação",
-            error: error?.message,
+            // error: error?.message,
         });
     }
 }
