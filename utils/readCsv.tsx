@@ -8,6 +8,8 @@ import readCidadesComCod from "./handlers/readCidadesComCod";
 import readGrauDeInstrucao from "./handlers/readGrauDeInstrucao";
 import readEstadoCivil from "./handlers/readEstadoCivil";
 import readIdades from "./handlers/readIdades";
+import readCompletentaryData from "./handlers/readCompletentaryData";
+import readBensCandidato from "./handlers/readBensCandidato";
 
 // mesma coisa que a função anterior, mas para cargos
 // meio inutil pq só tem 3 cargos não vale o processamento
@@ -40,4 +42,6 @@ export {
     readGrauDeInstrucao,
     readEstadoCivil,
     readIdades,
+    readCompletentaryData,
+    readBensCandidato
 };

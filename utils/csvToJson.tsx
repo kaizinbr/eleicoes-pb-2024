@@ -9,7 +9,10 @@ import { parse } from "csv-parse/sync";
  * @returns {any[]} An array of objects, each representing a row in the CSV.
  */
 export default function csvToJson(filePath?: string): any[] {
-    const csvFile = fs.readFileSync("data/consulta_cand_2024_PB.csv"); // vai ser um endereço fixo
+
+    filePath = filePath || "data/consulta_cand_2024_PB.csv"; // vai ser um endereço fixo
+
+    const csvFile = fs.readFileSync(filePath); // vai ser um endereço fixo
     const records = parse(csvFile, {
         delimiter: ";", // Especifique o delimitador correto
         columns: true, // Se o CSV tem cabeçalhos
