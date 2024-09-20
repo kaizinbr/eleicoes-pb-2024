@@ -8,12 +8,11 @@ import {
     Avatar,
     Group,
     Text,
+    Chip,
 } from "@mantine/core";
 import axios from "axios";
 
-const largeData = Array(100_000)
-    .fill(0)
-    .map((_, index) => `Option ${index}`);
+import classes from "@/styles/Main.module.css";
 
 export default function SelectCargo({
     cargo,
@@ -22,17 +21,39 @@ export default function SelectCargo({
     cargo: string;
     setCargo: (cargo: string) => void;
 }) {
-    const [data, setData] = useState<string[]>(["11 - Prefeito", "12 - Vice-Prefeito", "13 - Vereador"]);
+    const [data, setData] = useState<string[]>([]);
     const [value, setValue] = useState("");
-
     return (
-        <Autocomplete
-            label="Selecione o cargo"
-            placeholder="Digite o nome ou o código da cargo"
-            limit={50}
-            value={cargo}
-            onChange={setCargo}
-            data={data}
-        />
+        <Chip.Group multiple={false} value={cargo} onChange={setCargo}>
+            <Group className="mb-6" justify="center">
+                <Chip
+                    classNames={{
+                        // root: classes.chip,
+                        label: classes.chip,
+                    }}
+                    value="11"
+                >
+                    Prefeito
+                </Chip>
+                <Chip
+                    classNames={{
+                        // root: classes.chip,
+                        label: classes.chip,
+                    }}
+                    value="12"
+                >
+                    Vice-prefeito
+                </Chip>
+                <Chip
+                    classNames={{
+                        // root: classes.chip,
+                        label: classes.chip,
+                    }}
+                    value="13"
+                >
+                    Vereador
+                </Chip>
+            </Group>
+        </Chip.Group>
     );
 }

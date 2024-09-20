@@ -8,8 +8,11 @@ import {
     Avatar,
     Group,
     Text,
+    Chip
 } from "@mantine/core";
 import axios from "axios";
+
+import classes from "@/styles/Main.module.css";
 
 export default function SelectCidade({
     cidade,
@@ -52,6 +55,13 @@ export default function SelectCidade({
             onChange={setCidade}
             data={data}
             disabled={loading}
+            comboboxProps={{ shadow: "md" }}
+            classNames={{
+                input: classes.input + " mb-3",
+                dropdown: classes.dropdown,
+                option: classes.option,
+                label: "mb-2",
+            }}
         />
     );
 }
