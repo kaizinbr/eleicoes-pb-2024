@@ -1,13 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextResponse } from "next/server";
-import csvToJson, { readCidadesComCod, readCandidatos, readCandidatoRow, readGenero } from "@/utils/readCsv";
+import {  readGenero } from "@/utils/readCsv";
 
 // type Params = {
 //     team: string;
 // };
 
 export async function GET(request: Request) {
-    const csvData = csvToJson();
     // sobrado 19020
     // joilson 13222
 

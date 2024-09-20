@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextResponse, type NextRequest } from 'next/server'
 
-import { readCidadesComCod, readCandidatos, readCandidatoRow } from "@/utils/readCsv";
+import {  readCandidatos } from "@/utils/readCsv";
 
 export async function GET(request: NextRequest) {
     try {

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextResponse, type NextRequest } from "next/server";
 
-import csvToJson, {
+import {
     readCidadesComCod,
     readCandidatos,
     readCandidatoRow,

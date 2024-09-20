@@ -4,11 +4,6 @@
 import { useState, useEffect } from "react";
 import {
     Autocomplete,
-    AutocompleteProps,
-    Avatar,
-    Group,
-    Text,
-    Chip
 } from "@mantine/core";
 import axios from "axios";
 
@@ -22,7 +17,6 @@ export default function SelectCidade({
     setCidade: (cidade: string) => void;
 }) {
     const [data, setData] = useState<string[]>([]);
-    const [value, setValue] = useState("");
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {

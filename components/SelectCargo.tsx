@@ -1,16 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
-    Autocomplete,
-    AutocompleteProps,
-    Avatar,
     Group,
-    Text,
     Chip,
 } from "@mantine/core";
-import axios from "axios";
 
 import classes from "@/styles/Main.module.css";
 

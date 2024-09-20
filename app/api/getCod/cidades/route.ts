@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextResponse } from "next/server";
-import { readCidadesComCod, readCandidatos, readCandidatoRow } from "@/utils/readCsv";
+import { readCidadesComCod } from "@/utils/readCsv";
 
 // type Params = {
 //     team: string;
