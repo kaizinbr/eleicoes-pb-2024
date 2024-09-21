@@ -6,7 +6,7 @@ import csvToJson from "../csvToJson";
 // retorna um array de tuplas [cod, cidade]
 // ex: [["1", "João Pessoa"], ["2", "Campina Grande"], ...] o cod é uma string!!!
 export default function readCidadesComCod() {
-    const csvData = csvToJson();
+    const csvData = csvToJson("data/consulta_cand_2024_PB.csv");
 
     const column1 = "SG_UE"; // cod da cidade
     const column2 = "NM_UE"; // nome da cidade

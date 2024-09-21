@@ -3,7 +3,7 @@ import csvToJson from "../csvToJson";
 
 // separa por genero
 export default function readGenero(cargo?: string) {
-    const csvData = csvToJson();
+    const csvData = csvToJson("data/consulta_cand_2024_PB.csv");
 
     //     2: Masculino; e
     // . 4: Feminino.
