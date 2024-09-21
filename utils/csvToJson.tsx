@@ -10,7 +10,7 @@ import { parse } from "csv-parse/sync";
  */
 export default function csvToJson(filePath?: string): any[] {
 
-    filePath = filePath || "data/consulta_cand_2024_PB.csv"; // vai ser um endereço fixo
+    filePath = filePath || "https://eleicoes.kaizin.com.br/data/consulta_cand_2024_PB.csv"; // vai ser um endereço fixo
 
     const csvFile = fs.readFileSync(filePath); // vai ser um endereço fixo
     const records = parse(csvFile, {
