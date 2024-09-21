@@ -33,7 +33,7 @@ export async function GET(request: NextRequest) {
             status: 500,
             success: false,
             message: "Ocorreu um erro ao processar a solicitação",
-            error: error?.message,
+            error: (error as Error)?.message,
         });
     }
 }
