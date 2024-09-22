@@ -13,9 +13,9 @@ export default function csvToJson(filePath?: string): any[] {
     // Use path.resolve to construct the path to the CSV file
     filePath =
         filePath ||
-        path.resolve(process.cwd(), "public/data/consulta_cand_2024_PB.csv");
+        path.resolve(process.cwd(), "public/data/consulta_cand_2024_PB.csv"); //RESOLVEU
 
-    const csvFile = fs.readFileSync(filePath, "utf8");
+    const csvFile = fs.readFileSync(filePath);
     const records = parse(csvFile, {
         delimiter: ";", // Especifique o delimitador correto
         columns: true, // Se o CSV tem cabeçalhos

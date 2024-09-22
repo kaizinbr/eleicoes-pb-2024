@@ -20,11 +20,12 @@ export default function SelectCargo({
     const [value, setValue] = useState("");
     return (
         <Chip.Group multiple={false} value={cargo} onChange={setCargo}>
-            <Group className="mb-6" justify="center">
+            <Group className="mb-6 font-medium" justify="center">
                 <Chip
                     classNames={{
                         // root: classes.chip,
                         label: classes.chip,
+                        checkIcon: classes.checkIcon,
                     }}
                     value="11"
                 >
@@ -34,6 +35,7 @@ export default function SelectCargo({
                     classNames={{
                         // root: classes.chip,
                         label: classes.chip,
+                        checkIcon: classes.checkIcon,
                     }}
                     value="12"
                 >
@@ -43,6 +45,7 @@ export default function SelectCargo({
                     classNames={{
                         // root: classes.chip,
                         label: classes.chip,
+                        checkIcon: classes.checkIcon,
                     }}
                     value="13"
                 >

@@ -2,59 +2,69 @@
     /* w-full bg-woodsmoke-900 border-2 border-woodsmoke-800 py-2 px-4 
     rounded-lg outline-none transition-colors duration-200 */
     width: 100%;
-    background-color: #252525 !important;
-    border: 2px solid #454545 !important;
+    background-color: #F5F5F5 !important;
+    border: 2px solid #CACACA !important;
     padding: 0.3rem 1rem !important;
-    border-radius: 0.65rem !important;
+    border-radius: 0.75rem !important;
     height: auto !important;
     outline: none !important;
-    transition: border-color 0.2s !important;
+    transition: all 0.3s ease-in-out !important;
     font-size: 1rem !important;
-    color: #F7FBFF !important;
 }
 
 .input:focus {
     /* border-woodsmoke-500 */
-    border-color: #4f4f4f !important;
+    border-color: #FFA18A !important;
+    background-color: #FFF6F0 !important;
 }
 
 .dropdown {
     /* w-full bg-woodsmoke-900 border-2 border-woodsmoke-800 py-2 px-4 
     rounded-lg outline-none transition-colors duration-200 */
     width: 100%;
-    background-color: #252525 !important;
-    border: 2px solid #454545 !important;
+    background-color: #F5F5F5 !important;
+    border: 2px solid #CACACA !important;
     padding: 0.75rem .8rem !important;
-    border-radius: 0.65rem !important;
+    border-radius: 0.75rem !important;
     outline: none !important;
-    transition: border-color 0.2s !important;
+    transition: all 0.3s !important;
 }
 
 .option {
     width: 100%;
-    background-color: #252525 !important;
+    background-color: #F5F5F5 !important;
     border-radius: 0.5rem !important;
     height: auto !important;
-    transition: all 0.2s !important;
-    color: #F7FBFF !important;
+    transition: all 0.3s !important;
 }
 
 .option:hover {
-    background-color: #454545 !important;
+    background-color: #FFD7C1 !important;
 }
 
 
 .chip {
-    background-color: #252525 !important;
-    border: 2px solid #454545 !important;
-    color: #F7FBFF !important;
+    background-color: #F5F5F5 !important;
+    border: 2px solid #CACACA !important;
+    /* color:  !important; */
+    transition: all 0.3s !important;
     padding: 0.35rem 1.3rem !important;
     border-radius: 1.5rem !important;
     height: auto !important;
     width: auto !important;
 }
 
+.chip:hover {
+    background-color: #FFF6F0 !important;
+    border-color: #FFBBA2 !important;
+}
+
 .chip[data-checked="true"] {
-    background-color: #bd613e !important;
-    border-color: #f6eade !important;
+    background-color: #FFEDE0 !important;
+    border-color: #FF7664 !important;
+    color: #FF7664 !important;
+}
+
+.checkIcon {
+    color: #FF7664 !important;
 }

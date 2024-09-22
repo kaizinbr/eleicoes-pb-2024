@@ -38,23 +38,13 @@ export default function Main() {
         }
     };
 
-    // {
-    //     "0": {
-    //         "id": 150001992742,
-    //         "nome": "ALEX GABRIEL",
-    //         "numero": "12112",
-    //         "numeroPartido": "12",
-    //         "siglaPartido": "PDT"
-    //     }
-    // }
-
     return (
         <div className="m-auto max-w-xl">
             <SelectCidade cidade={cidade} setCidade={setCidade} />
             <SelectCargo cargo={cargo} setCargo={setCargo} />
             <button
                 className={`
-                    bg-tuscany-500 w-full rounded-lg p-2 text-white
+                    bg-primary-500 w-full rounded-xl py-3 text-white
                 `}
                 onClick={() => getAllCandidatos()}
             >
@@ -70,8 +60,10 @@ export default function Main() {
                                     href={`/candidato/${candidato.id}`}
                                     className={`
                                         flex flex-row gap-3
-                                        bg-woodsmoke-900 rounded-xl overflow-hidden
-                                        border-2 border-woodsmoke-800
+                                        bg-gray-200 hover:bg-primary-50 rounded-xl overflow-hidden
+                                        border-2 border-border hover:border-primary-400
+                                        transition-all duration-300
+                                        group
                                     `}
                                 >
                                     <Image
@@ -83,16 +75,16 @@ export default function Main() {
 
                                     <div className="flex flex-col flex-grow py-3 justify-between">
                                         <div className="flex flex-col">
-                                            <span className="text-white font-bold">
+                                            <span className=" font-bold">
                                                 {candidato.nome} {candidato.numero}
                                             </span>
-                                            <span className="text-woodsmoke-300 text-sm">
+                                            <span className="text-black/60 text-sm">
                                                 {candidato.cargo}
                                             </span>
                                         </div>
 
                                         <div className="">
-                                            <span className="text-woodsmoke-300 text-sm">
+                                            <span className="text-black/60 text-sm">
                                                 {candidato.siglaPartido}{" "}
                                                 {candidato.numeroPartido}
                                             </span>
@@ -100,7 +92,7 @@ export default function Main() {
                                     </div>
 
                                     <div className="w-14 right-0 flex items-center justify-center">
-                                        <ChevronRight size={32} />
+                                        <ChevronRight size={32} className="group-hover:text-primary-500 transition-all duration-300" />
                                     </div>
                                 </Link>
                             </li>
