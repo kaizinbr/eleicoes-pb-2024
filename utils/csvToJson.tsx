@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as fs from "fs";
 import { parse } from "csv-parse/sync";
+import path from "path";
 
 /**
  * Converts a CSV file to an array of JSON objects where each row in the CSV becomes an object.
@@ -9,10 +10,12 @@ import { parse } from "csv-parse/sync";
  * @returns {any[]} An array of objects, each representing a row in the CSV.
  */
 export default function csvToJson(filePath?: string): any[] {
+    // Use path.resolve to construct the path to the CSV file
+    filePath =
+        filePath ||
+        path.resolve(process.cwd(), "public/data/consulta_cand_2024_PB.csv");
 
-    filePath = filePath || process.cwd() + "/data/consulta_cand_2024_PB.csv"; // vai ser um endereço fixo
-
-    const csvFile = fs.readFileSync(filePath);
+    const csvFile = fs.readFileSync(filePath, "utf8");
     const records = parse(csvFile, {
         delimiter: ";", // Especifique o delimitador correto
         columns: true, // Se o CSV tem cabeçalhos
