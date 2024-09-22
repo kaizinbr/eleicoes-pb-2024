@@ -12,7 +12,7 @@ export default function csvToJson(filePath?: string): any[] {
 
     filePath = filePath || "public/data/consulta_cand_2024_PB.csv"; // vai ser um endereço fixo
 
-    const csvFile = fs.readFileSync(filePath, 'utf8');
+    const csvFile = fs.readFileSync(process.cwd() + filePath);
     const records = parse(csvFile, {
         delimiter: ";", // Especifique o delimitador correto
         columns: true, // Se o CSV tem cabeçalhos
