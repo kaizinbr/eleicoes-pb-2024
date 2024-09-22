@@ -35,13 +35,16 @@ export default function Candidato({ params }: { params: { id: string } }) {
         <div
             className={`
                 w-full min-h-screen p-6 px-4 md:px-6 
-                flex flex-col gap-3
+                flex flex-col gap-3 md:flex-row md:gap-6
+                m-auto justify-center
             `}
         >
             <Header data={candidatoData} /> 
-            <Pessoais data={candidatoData} outros={outrasData} />
-            <Eleitorais data={candidatoData} outros={outrasData} />
-            <Bens bens={bens} />
+            <div className="w-full max-w-2xl flex flex-col gap-3">
+                <Pessoais data={candidatoData} outros={outrasData} />
+                <Eleitorais data={candidatoData} outros={outrasData} />
+                <Bens bens={bens} />
+            </div>
         </div>
     );
 }

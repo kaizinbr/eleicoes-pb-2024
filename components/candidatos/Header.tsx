@@ -6,11 +6,11 @@ import titleCased from "@/utils/handlers/titleCased";
 
 export default function Header({data}: {data: any}) {
     return (
-        <div>
+        <>
             {!data ? (null) : (<div
                 className={`
                     flex flex-col items-center justify-center
-                    p-4
+                    p-4 md:h-screen md:sticky md:top-0
             
                 `}
             >
@@ -41,6 +41,6 @@ export default function Header({data}: {data: any}) {
                     {data.DS_COMPOSICAO_COLIGACAO}
                 </h2>
             </div>)}
-        </div>
+        </>
     );
 }
