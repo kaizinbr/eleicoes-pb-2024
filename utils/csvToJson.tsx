@@ -10,9 +10,9 @@ import { parse } from "csv-parse/sync";
  */
 export default function csvToJson(filePath?: string): any[] {
 
-    filePath = filePath || "data/consulta_cand_2024_PB.csv"; // vai ser um endereço fixo
+    filePath = filePath || "public/data/consulta_cand_2024_PB.csv"; // vai ser um endereço fixo
 
-    const csvFile = fs.readFileSync(filePath); // vai ser um endereço fixo
+    const csvFile = fs.readFileSync(filePath, 'utf8');
     const records = parse(csvFile, {
         delimiter: ";", // Especifique o delimitador correto
         columns: true, // Se o CSV tem cabeçalhos
