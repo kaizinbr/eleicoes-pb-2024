@@ -6,11 +6,11 @@ import {readCandidatoRow } from "@/utils/readCsv";
 export async function GET(request: NextRequest) {
     try {
         const searchParams = request.nextUrl.searchParams
-        const codSQ = searchParams.get('codSQ')! 
+        const codigo = searchParams.get('codigo')! 
         // não pode ser o numero dele na urna!!! muita gente tem o mesmo numero
         // pode ser o numero SQ_CANDIDATO tipo 150001993150 pq é unico
 
-        if (!codSQ) {
+        if (!codigo) {
             return NextResponse.json({
                 status: 400,
                 success: false,
@@ -18,13 +18,13 @@ export async function GET(request: NextRequest) {
             });
         }
 
-        const result = readCandidatoRow(codSQ);
+        const result = readCandidatoRow(codigo);
 
         return NextResponse.json({
             status: 200,
             success: true,
             message: "exibindo candidatos a partir do código da cidade e do cargo",
-            código: codSQ,
+            código: codigo,
             data: result,
         });
     } catch (error) {

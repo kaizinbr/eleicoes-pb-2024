@@ -7,10 +7,11 @@ import SelectCargo from "@/components/SelectCargo";
 import SelectCidade from "@/components/SelectCidade";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Main() {
     const [data, setData] = useState<string[]>([]);
-    const [cidade, setCidade] = useState<string>("");
+    const [cidade, setCidade] = useState<string>("19020 - SOBRADO");
     const [cargo, setCargo] = useState<string>("11");
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -65,7 +66,8 @@ export default function Main() {
                     <ul className="flex flex-col gap-3">
                         {data.map((candidato: any) => (
                             <li key={candidato.id}>
-                                <div
+                                <Link
+                                    href={`/candidato/${candidato.id}`}
                                     className={`
                                         flex flex-row gap-3
                                         bg-woodsmoke-900 rounded-xl overflow-hidden
@@ -100,7 +102,7 @@ export default function Main() {
                                     <div className="w-14 right-0 flex items-center justify-center">
                                         <ChevronRight size={32} />
                                     </div>
-                                </div>
+                                </Link>
                             </li>
                         ))}
                     </ul>

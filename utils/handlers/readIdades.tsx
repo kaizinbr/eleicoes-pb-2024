@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import csvToJson from "../csvToJson";
 
-function calcularIdade(dataNascimento: string): number {
+export function calcularIdade(dataNascimento: string): number {
+    const dataConvertida = converterData(dataNascimento)
     const hoje = new Date();
-    const nascimento = new Date(dataNascimento);
+    const nascimento = new Date(dataConvertida);
     let idade = hoje.getFullYear() - nascimento.getFullYear();
     const mes = hoje.getMonth() - nascimento.getMonth();
 
@@ -74,8 +75,8 @@ export default function readIdades() {
     csvData.forEach((record) => {
         const combinedValue = `${record[column1]},${record[column2]},${record[column3]},${record[column4]}`;
 
-        const dataConvertida = converterData(record[column4]); // Supondo que column6 seja a data de nascimento no formato "DD/MM/YYYY"
-        const idade = calcularIdade(dataConvertida);
+        // const dataConvertida = converterData(record[column4]); // Supondo que column6 seja a data de nascimento no formato "DD/MM/YYYY"
+        const idade = calcularIdade(record[column4]);
         // console.log("data", record[column6], "idade", idade);
 
         if (idade < 21 && !uniqueResults.has(combinedValue)) {
